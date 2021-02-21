@@ -2,7 +2,7 @@ import { useState } from "react";
 import Error from "./Error";
 import shortid from 'shortid';
 
-const Formulario = () => {
+const Formulario = ({agregarNuevoGasto}) => {
 
     //Definimos el State del Formulario
     const [nombre, guardarNombre] = useState('');
@@ -29,11 +29,12 @@ const Formulario = () => {
             id: shortid.generate()
         }
 
-        console.log(gastos);
         // Pasar el gasto al componente principal 
-
+        agregarNuevoGasto(gastos);
 
         // Resetear el formulario
+        guardarNombre('');
+        guardarCantidad(0);
     }
 
     return ( 
