@@ -32,7 +32,7 @@ useEffect(() => {
     // Reseteamos Condición de Listado de Gastos
     guardarCrearGasto(false);
   }
-}, [gasto])
+}, [gasto, creargasto, restante, gastos])
 
   return (
     <div className="container">
